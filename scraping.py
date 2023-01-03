@@ -10,7 +10,7 @@ import pandas as pd
 def get_code(url):
     for i in range(10):
         try:
-            r = requests.get(url, verify=False, timeout=10)
+            r = requests.get(url, timeout=10)
             break
         except(
             requests.ConnectionError,
@@ -89,10 +89,9 @@ def find_scores(film):
         except(TypeError, AttributeError):
             return reviews
 
-start = time()
+'''start = time()
 usrs = test_find_reviewers('shes-funny-that-way', 150)
 df = pd.DataFrame(usrs)
 df.to_csv('test.csv')
 end = time()
-print('elapsed time is', end-start, 'seconds')
-#usr.div.div.p.span['class']
+print('elapsed time is', end-start, 'seconds')'''

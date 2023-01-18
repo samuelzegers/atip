@@ -37,10 +37,10 @@ class LabelPropagation:
         self.unwrap(labels)
         self.predictions = np.copy(self.labels_unwrapped)
         prevstep = np.zeros((self.n_nodes, self.n_cats))
-        for i in tqdm(range(max_iter)):
+        for i in range(max_iter):
             dif = np.sum(np.absolute(self.predictions-prevstep))
             if dif < error:
-                print(f"The method stopped after {i} iterations with error={dif:.4f}.")
+                #print(f"The method stopped after {i} iterations with error={dif:.4f}.")
                 break
             prevstep = np.copy(self.predictions)
             self.labprop()

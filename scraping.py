@@ -73,7 +73,7 @@ def test_find_reviewers(film, n):
 
 def find_scores(film):
     reviews = np.empty((0,2), dtype=str)
-    url = 'https://letterboxd.com/film/' + film + '/reviews/by/activity/'
+    url = 'https://letterboxd.com/film/' + film + '/reviews/'
     while True:
         html = get_code(url)
         for usr in html.find_all('li', class_='film-detail'):
